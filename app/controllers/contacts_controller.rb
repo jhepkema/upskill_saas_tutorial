@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
       name = params[:contact][:name] # This pulls the :name out of the :contact file that was just created
       email = params[:contact][:email]
       body = params[:contact][:comments]
-      ContactMailer.contact_email(name, email, body).deliver # .deliver makes it fire
+      ContactMailer.contact_email(name, email, body).deliver # .deliver makes it send the mail
       flash[:success] = "Message sent."
       redirect_to new_contact_path
     else
