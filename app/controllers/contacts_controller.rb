@@ -14,7 +14,7 @@ class ContactsController < ApplicationController
     end
   end
   
-  private
+  private # This is for safety
     def contact_params
       params.require(:contact).permit(:name, :email, :comments)
     end
